@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddvnpvlvskikb"]
+
+[ext_resource type="FontFile" uid="uid://bpsefiotqlkol" path="res://fonts/ARCADECLASSIC.TTF" id="1"]
+[ext_resource type="Script" path="res://screens/splash/Splash.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dsfv0df2qjetc" path="res://screens/splash/rear.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bqlgjnciirl1" path="res://screens/splash/ship.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dcrjlc4indi2u" path="res://screens/splash/logo.png" id="5"]
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/9/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/9/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/9/0/kerning_overrides/9/0 = Vector2(0, 0)
+cache/0/9/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/9/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -19.0
+offset_right = 56.5
+offset_bottom = -8.0
+theme_override_colors/font_color = Color(0.0588235, 0.219608, 0.0588235, 1)
+theme_override_fonts/font = SubResource("2")
+theme_override_font_sizes/font_size = 9
+text = "Press  the  button  to  start"
+
+[node name="Rear" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("3")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(80, 69)
+texture = ExtResource("5")
+
+[node name="Ship" type="Sprite2D" parent="."]
+position = Vector2(80, 68)
+texture = ExtResource("4")

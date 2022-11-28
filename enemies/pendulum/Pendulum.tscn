@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ber84g8sbgx5h"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1_gyhfv"]
+[ext_resource type="Texture2D" uid="uid://76j8qs8qmum4" path="res://enemies/pendulum/pendulum.png" id="2_1v8ve"]
+[ext_resource type="Script" path="res://enemies/pendulum/Pendulum.gd" id="2_usqrf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5eqxh"]
+radius = 6.0
+
+[node name="Pendulum" instance=ExtResource("1_gyhfv")]
+script = ExtResource("2_usqrf")
+can_shoot = true
+speed = 30
+value = 150
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_1v8ve")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_5eqxh")

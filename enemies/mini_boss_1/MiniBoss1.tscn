@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://os3ea50ga374"]
+
+[ext_resource type="PackedScene" uid="uid://dsncrs8chfslf" path="res://enemies/mini_boss/MiniBoss.tscn" id="1_deakp"]
+[ext_resource type="Texture2D" uid="uid://cowu5w7y8cvyr" path="res://enemies/mini_boss_1/mini_boss_1.png" id="1_l2oel"]
+[ext_resource type="Script" path="res://enemies/mini_boss_1/MiniBoss1.gd" id="2_dwf7h"]
+[ext_resource type="PackedScene" uid="uid://cfjbiwslgna66" path="res://enemies/mini_boss/barrel/Barrel.tscn" id="4_7kkk3"]
+[ext_resource type="PackedScene" uid="uid://cu40475qc1cua" path="res://enemies/mini_boss/heart/Heart.tscn" id="5_ps81e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkptl"]
+radius = 14.0
+height = 32.0
+
+[node name="MiniBoss1" instance=ExtResource("1_deakp")]
+script = ExtResource("2_dwf7h")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("1_l2oel")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_wkptl")
+
+[node name="Barrels" type="Node2D" parent="." index="2"]
+
+[node name="Barrel" parent="Barrels" index="0" instance=ExtResource("4_7kkk3")]
+position = Vector2(-8, 15)
+
+[node name="Barrel2" parent="Barrels" index="1" instance=ExtResource("4_7kkk3")]
+position = Vector2(8, 15)
+
+[node name="Heart" parent="Hearts" index="0" instance=ExtResource("5_ps81e")]
+z_index = 1
+position = Vector2(0, 4)

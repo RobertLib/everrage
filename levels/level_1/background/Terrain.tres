@@ -1,0 +1,11 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cbradctladnsi"]
+
+[ext_resource type="Texture2D" uid="uid://cxrecof0o513f" path="res://levels/level_1/background/terrain.png" id="1_n14a0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_amv8s"]
+texture = ExtResource("1_n14a0")
+0:0/0 = 0
+1:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_amv8s")

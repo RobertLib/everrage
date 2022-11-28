@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://t7k4orm12xmn"]
+
+[ext_resource type="Texture2D" uid="uid://ckpcl7paxl67p" path="res://enemies/mini_boss/barrel/bullet/bullet.png" id="1_7m3ih"]
+[ext_resource type="Script" path="res://enemies/mini_boss/barrel/bullet/Bullet.gd" id="1_78hiv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ib2tg"]
+radius = 2.0
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_78hiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7m3ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ib2tg")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

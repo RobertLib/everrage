@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://yx54x153x5rg"]
+
+[ext_resource type="PackedScene" uid="uid://od0ltbnj35k5" path="res://items/item_up/ItemUp.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://by7uwh50lxsf4" path="res://items/power_up/power_up.png" id="2"]
+[ext_resource type="Script" path="res://items/power_up/PowerUp.gd" id="3"]
+
+[node name="PowerUp" instance=ExtResource("1")]
+script = ExtResource("3")
+
+[node name="OpenSprite" parent="." index="1"]
+texture = ExtResource("2")

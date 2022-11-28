@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://banlyno600o0x"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1"]
+[ext_resource type="Script" path="res://enemies/flying_around/FlyingAround.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dh21aih5t4s8f" path="res://enemies/flying_around/flying_around.png" id="3"]
+
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 2.82843
+height = 15.5563
+
+[sub_resource type="Animation" id="2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 360.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3sa2o"]
+_data = {
+"RESET": SubResource("2"),
+"Spin": SubResource("3")
+}
+
+[node name="FlyingAround" instance=ExtResource("1")]
+script = ExtResource("2")
+can_shoot = true
+speed = 30
+value = 250
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.785398
+shape = SubResource("1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_3sa2o")
+}

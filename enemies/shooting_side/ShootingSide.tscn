@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://7of0mf0srsqy"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1_q4wev"]
+[ext_resource type="Script" path="res://enemies/shooting_side/ShootingSide.gd" id="2_i6wvv"]
+[ext_resource type="Texture2D" uid="uid://xlwtbxkt23bx" path="res://enemies/shooting_side/shooting_side.png" id="3_1olqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ty7j"]
+size = Vector2(8, 2)
+
+[node name="ShootingSide" instance=ExtResource("1_q4wev")]
+script = ExtResource("2_i6wvv")
+can_shoot = true
+speed = 0
+value = 210
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_1olqm")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_2ty7j")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5si04vf4cxle"]
+
+[ext_resource type="Script" path="res://enemies/attack_from_side/AttackFromSide.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c6cp8bec3bjsm" path="res://enemies/attack_from_side/attack_from_side.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="3"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 6.0
+
+[node name="AttackFromSide" instance=ExtResource("3")]
+script = ExtResource("1")
+can_shoot = true
+speed = 45
+value = 200
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")

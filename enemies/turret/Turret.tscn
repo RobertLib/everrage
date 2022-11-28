@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://djp5ht5mvlcll"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1_6rs8e"]
+[ext_resource type="Script" path="res://enemies/turret/Turret.gd" id="1_ftxeu"]
+[ext_resource type="Texture2D" uid="uid://d4h05nhqptg7j" path="res://enemies/turret/turret.png" id="1_rwlhu"]
+[ext_resource type="Texture2D" uid="uid://bq757fbrwct2f" path="res://enemies/turret/barrel.png" id="2_1spnf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8pr6"]
+radius = 4.0
+
+[node name="Turret" instance=ExtResource("1_6rs8e")]
+script = ExtResource("1_ftxeu")
+can_shoot = true
+speed = 0
+value = 130
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("1_rwlhu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_w8pr6")
+
+[node name="Barrel" type="Node2D" parent="." index="3"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Barrel" index="0"]
+texture = ExtResource("2_1spnf")
