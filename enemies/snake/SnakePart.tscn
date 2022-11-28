@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b71phy64b3esl"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://doo5xdn38h2nm" path="res://enemies/snake/snake_part.png" id="2"]
+[ext_resource type="Script" path="res://enemies/snake/SnakePart.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(8, 8)
+
+[node name="SnakePart" groups=["snake_parts"] instance=ExtResource("1")]
+script = ExtResource("3")
+speed = 30
+value = 20
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")

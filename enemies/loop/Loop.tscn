@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dir1mak777gfs"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://do3k58whmufad" path="res://enemies/loop/loop.png" id="2"]
+[ext_resource type="Script" path="res://enemies/loop/Loop.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 7.0
+
+[node name="Loop" instance=ExtResource("1")]
+script = ExtResource("3")
+can_shoot = true
+speed = 50
+value = 250
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("1")

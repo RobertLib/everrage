@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsncrs8chfslf"]
+
+[ext_resource type="Script" path="res://enemies/mini_boss/MiniBoss.gd" id="1_dqte2"]
+
+[node name="MiniBoss" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_dqte2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Hearts" type="Node2D" parent="."]

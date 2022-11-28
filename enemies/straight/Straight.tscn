@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuusbo3d2aebt"]
+
+[ext_resource type="PackedScene" uid="uid://dk551jtgig1kg" path="res://enemies/enemy/Enemy.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbhhvffq4ipav" path="res://enemies/straight/straight.png" id="2"]
+[ext_resource type="Script" path="res://enemies/straight/Straight.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 8.0
+
+[node name="Straight" instance=ExtResource("1")]
+script = ExtResource("3")
+can_shoot = true
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 1)
+shape = SubResource("1")

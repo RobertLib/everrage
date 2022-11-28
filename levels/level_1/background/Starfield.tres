@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dyoqgiasst7g5"]
+
+[ext_resource type="Texture2D" uid="uid://d0ihkyir6baos" path="res://levels/level_1/background/starfield.png" id="1_hegkn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44go2"]
+texture = ExtResource("1_hegkn")
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/flip_h = true
+0:0/2 = 2
+0:0/2/flip_v = true
+0:0/3 = 3
+0:0/3/flip_h = true
+0:0/3/flip_v = true
+1:0/next_alternative_id = 4
+1:0/0 = 0
+1:0/1 = 1
+1:0/1/flip_h = true
+1:0/2 = 2
+1:0/2/flip_v = true
+1:0/3 = 3
+1:0/3/flip_h = true
+1:0/3/flip_v = true
+2:0/0 = 0
+3:0/0 = 0
+
+[resource]
+sources/4 = SubResource("TileSetAtlasSource_44go2")
